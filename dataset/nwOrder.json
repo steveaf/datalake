@@ -5,6 +5,9 @@
 			"referenceName": "AzureFileStorage_Northwind",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "files"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
