@@ -5,6 +5,9 @@
 			"referenceName": "AzureDataLakeStorage_stornwadls",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "ADLS"
+		},
 		"annotations": [],
 		"type": "Avro",
 		"typeProperties": {

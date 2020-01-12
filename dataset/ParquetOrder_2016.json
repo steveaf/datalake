@@ -1,5 +1,5 @@
 {
-	"name": "AvroCustomer",
+	"name": "ParquetOrder_2016",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage_stornwadls",
@@ -9,14 +9,15 @@
 			"name": "ADLS"
 		},
 		"annotations": [],
-		"type": "Avro",
+		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Customer.avro",
-				"folderPath": "Customers",
+				"folderPath": "Orders/2016",
 				"fileSystem": "northwind"
-			}
-		}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
 	}
 }

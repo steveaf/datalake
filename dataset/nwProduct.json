@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "files"
+			"name": "Files"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
