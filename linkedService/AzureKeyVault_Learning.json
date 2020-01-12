@@ -1,0 +1,12 @@
+{
+	"name": "AzureKeyVault_Learning",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "The learning key vault",
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-learning.vault.azure.net"
+		}
+	}
+}

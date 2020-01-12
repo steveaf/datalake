@@ -1,0 +1,19 @@
+{
+	"name": "AzureDataLakeStorage_stornwadls",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stornwadls.dfs.core.windows.net",
+			"accountKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault_Learning",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "stornwadls-key"
+			}
+		}
+	}
+}
