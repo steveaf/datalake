@@ -1,0 +1,24 @@
+{
+	"name": "nwCustomers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureFileStorage_Northwind",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "files"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureFileStorageLocation",
+				"fileName": "NTCL_Customer.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
