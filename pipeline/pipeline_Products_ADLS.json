@@ -1,5 +1,5 @@
 {
-	"name": "pipelineProducts",
+	"name": "pipeline_Products_ADLS",
 	"properties": {
 		"activities": [
 			{
