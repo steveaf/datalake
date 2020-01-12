@@ -1,0 +1,22 @@
+{
+	"name": "AvroCustomer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage_stornwadls",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Avro"
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Customer.avro",
+				"folderPath": "Customers",
+				"fileSystem": "northwind"
+			}
+		}
+	}
+}
