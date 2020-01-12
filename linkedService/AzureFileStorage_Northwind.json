@@ -1,0 +1,20 @@
+{
+	"name": "AzureFileStorage_Northwind",
+	"properties": {
+		"description": "files used earlier",
+		"annotations": [],
+		"type": "AzureFileStorage",
+		"typeProperties": {
+			"host": "\\\\stornwrawdata.file.core.windows.net\\incomingdata",
+			"userId": "Azure\\stornwrawdata",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault_Learning",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "stornwrawdata-key"
+			}
+		}
+	}
+}
