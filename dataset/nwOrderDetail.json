@@ -1,0 +1,41 @@
+{
+	"name": "nwOrderDetail",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureFileStorage_Northwind",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "files"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureFileStorageLocation",
+				"fileName": "NTCL_Order_Detail.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
