@@ -1,0 +1,19 @@
+{
+	"name": "AvroProducts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage_stornwadls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Products.avro",
+				"folderPath": "Products",
+				"fileSystem": "northwind"
+			}
+		}
+	}
+}
