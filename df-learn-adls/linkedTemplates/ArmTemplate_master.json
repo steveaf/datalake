@@ -1,0 +1,70 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "df-learn-adls"
+		},
+		"AzureDataLakeStorage_stornwadls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://stornwadls.dfs.core.windows.net"
+		},
+		"AzureFileStorage_Northwind_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "\\\\stornwrawdata.file.core.windows.net\\incomingdata"
+		},
+		"AzureFileStorage_Northwind_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "Azure\\stornwrawdata"
+		},
+		"AzureKeyVault_Learning_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-learning.vault.azure.net"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureKeyVault_Learning_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault_Learning_properties_typeProperties_baseUrl')]"
+					},
+					"AzureDataLakeStorage_stornwadls_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage_stornwadls_properties_typeProperties_url')]"
+					},
+					"AzureFileStorage_Northwind_properties_typeProperties_host": {
+						"value": "[parameters('AzureFileStorage_Northwind_properties_typeProperties_host')]"
+					},
+					"AzureFileStorage_Northwind_properties_typeProperties_userId": {
+						"value": "[parameters('AzureFileStorage_Northwind_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

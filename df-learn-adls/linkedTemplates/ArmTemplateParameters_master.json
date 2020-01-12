@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "df-learn-adls"
+		},
+		"AzureDataLakeStorage_stornwadls_properties_typeProperties_url": {
+			"value": "https://stornwadls.dfs.core.windows.net"
+		},
+		"AzureFileStorage_Northwind_properties_typeProperties_host": {
+			"value": "\\\\stornwrawdata.file.core.windows.net\\incomingdata"
+		},
+		"AzureFileStorage_Northwind_properties_typeProperties_userId": {
+			"value": "Azure\\stornwrawdata"
+		},
+		"AzureKeyVault_Learning_properties_typeProperties_baseUrl": {
+			"value": "https://kv-learning.vault.azure.net"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
