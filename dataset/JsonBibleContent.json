@@ -1,5 +1,5 @@
 {
-	"name": "BibleText",
+	"name": "JsonBibleContent",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage_stornwadls",
@@ -9,21 +9,15 @@
 			"name": "ADLS/Bible"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "bbe.txt",
+				"fileName": "biblecontents.json",
+				"folderPath": "JSON",
 				"fileSystem": "bible"
-			},
-			"columnDelimiter": "",
-			"escapeChar": "\\",
-			"quoteChar": "\""
-		},
-		"schema": [
-			{
-				"type": "String"
 			}
-		]
+		},
+		"schema": {}
 	}
 }

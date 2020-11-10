@@ -1,5 +1,5 @@
 {
-	"name": "BibleText",
+	"name": "ParquetBibleContent",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage_stornwadls",
@@ -9,21 +9,15 @@
 			"name": "ADLS/Bible"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "bbe.txt",
+				"folderPath": "Parquet",
 				"fileSystem": "bible"
 			},
-			"columnDelimiter": "",
-			"escapeChar": "\\",
-			"quoteChar": "\""
+			"compressionCodec": "snappy"
 		},
-		"schema": [
-			{
-				"type": "String"
-			}
-		]
+		"schema": []
 	}
 }

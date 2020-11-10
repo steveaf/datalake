@@ -1,0 +1,40 @@
+{
+	"name": "AzureSqlStageBibleContent",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlrockstardemo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "TextID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BookAbbrev",
+				"type": "char"
+			},
+			{
+				"name": "Chapter",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Verse",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Content",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "stage",
+			"table": "BibleContent"
+		}
+	}
+}
