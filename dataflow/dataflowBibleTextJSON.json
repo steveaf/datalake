@@ -1,5 +1,5 @@
 {
-	"name": "dataflowBibleText",
+	"name": "dataflowBibleTextJSON",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -12,7 +12,15 @@
 					"name": "sourceBibleText"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "JsonBibleContent",
+						"type": "DatasetReference"
+					},
+					"name": "sinkParquet"
+				}
+			],
 			"transformations": [
 				{
 					"name": "DerivedColumnBible"
@@ -21,7 +29,7 @@
 					"name": "Filter1"
 				}
 			],
-			"script": "source(output(\n\t\tColumn_1 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> sourceBibleText\nFilter1 derive(BookAbbrev = split(Column_1,\" \")[1],\n\t\tChapter = substring(Column_1, instr(Column_1,\":\")-2, instr(Column_1,\":\")-instr(Column_1,\" \")),\n\t\tVerse = substring(Column_1, 1+instr(Column_1,\":\"), instr(substring(Column_1, 1+instr(Column_1,\":\"), 5),\" \")-1),\n\t\tContents = substring(Column_1, 6+instr(substring(Column_1, 1+instr(Column_1,\":\"), 5),\" \"), 9999)) ~> DerivedColumnBible\nsourceBibleText filter(instr(Column_1,\":\") > 2) ~> Filter1"
+			"script": "source(output(\n\t\tColumn_1 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> sourceBibleText\nFilter1 derive(BookAbbrev = split(Column_1,\" \")[1],\n\t\tChapter = substring(Column_1, instr(Column_1,\":\")-2, instr(Column_1,\":\")-instr(Column_1,\" \")),\n\t\tVerse = substring(Column_1, 1+instr(Column_1,\":\"), instr(substring(Column_1, 1+instr(Column_1,\":\"), 5),\" \")-1),\n\t\tContents = substring(Column_1, 6+instr(substring(Column_1, 1+instr(Column_1,\":\"), 5),\" \"), 9999)) ~> DerivedColumnBible\nsourceBibleText filter(instr(Column_1,\":\") > 2) ~> Filter1\nDerivedColumnBible sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tmapColumn(\n\t\tBookAbbrev,\n\t\tChapter,\n\t\tVerse,\n\t\tContents\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sinkParquet"
 		}
 	}
 }
