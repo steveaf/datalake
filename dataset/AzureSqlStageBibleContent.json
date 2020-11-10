@@ -19,13 +19,13 @@
 			},
 			{
 				"name": "Chapter",
-				"type": "smallint",
-				"precision": 5
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "Verse",
-				"type": "smallint",
-				"precision": 5
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "Content",
