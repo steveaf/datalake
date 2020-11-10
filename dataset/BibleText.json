@@ -1,0 +1,32 @@
+{
+	"name": "BibleText",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage_stornwadls",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ADLS"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "bbe.txt",
+				"fileSystem": "bible"
+			},
+			"columnDelimiter": "",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}

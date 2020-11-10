@@ -1,0 +1,29 @@
+{
+	"name": "dataflowBibleBooks",
+	"properties": {
+		"description": "Bible Books",
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "BibleBooks",
+						"type": "DatasetReference"
+					},
+					"name": "BooksStream"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlBibleBooks",
+						"type": "DatasetReference"
+					},
+					"name": "sinkSQL"
+				}
+			],
+			"transformations": [],
+			"script": "source(output(\n\t\tTestament as string,\n\t\tAbbreviation as string,\n\t\tBook as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> BooksStream\nBooksStream sink(input(\n\t\tBookID as integer,\n\t\tTestamentAbbreviation as string,\n\t\tTestamentName as string,\n\t\tBookAbbreviation as string,\n\t\tBookName as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tmapColumn(\n\t\tTestamentAbbreviation = Testament,\n\t\tBookAbbreviation = Abbreviation,\n\t\tBookName = Book\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sinkSQL"
+		}
+	}
+}
