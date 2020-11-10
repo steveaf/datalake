@@ -7,7 +7,31 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "TextID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BookAbbrev",
+				"type": "char"
+			},
+			{
+				"name": "Chapter",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Verse",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Content",
+				"type": "varchar"
+			}
+		],
 		"typeProperties": {
 			"schema": "stage",
 			"table": "BibleContent"
