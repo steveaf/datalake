@@ -1,0 +1,24 @@
+{
+	"name": "ParquetaBibleContent",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage_stornwadls",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ADLS/Bible"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "biblecontent.parquet",
+				"folderPath": "Parquet",
+				"fileSystem": "bible"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
