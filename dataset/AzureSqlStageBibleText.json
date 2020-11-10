@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlStageBibleText",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlrockstardemo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "stage",
+			"table": "BibleText"
+		}
+	}
+}
