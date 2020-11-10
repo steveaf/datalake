@@ -1,9 +1,9 @@
 {
-	"name": "BibleBooks",
+	"name": "pipelineBibleContentParquet",
 	"properties": {
 		"activities": [
 			{
-				"name": "dataflowBibleBooks",
+				"name": "dataflowBibleTextPARQUET",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dataflowBibleBooks",
+						"referenceName": "dataflowBibleTextPARQUET",
 						"type": "DataFlowReference"
 					},
 					"compute": {
