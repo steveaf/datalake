@@ -1,0 +1,38 @@
+{
+	"name": "AzureSqlBibleBooks",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlrockstardemo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "BookID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TestamentAbbreviation",
+				"type": "char"
+			},
+			{
+				"name": "TestamentName",
+				"type": "varchar"
+			},
+			{
+				"name": "BookAbbreviation",
+				"type": "char"
+			},
+			{
+				"name": "BookName",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "BibleBooks"
+		}
+	}
+}
