@@ -1,0 +1,23 @@
+{
+	"name": "JsonBibleContent",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage_stornwadls",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ADLS/Bible"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "biblecontents.json",
+				"folderPath": "JSON",
+				"fileSystem": "bible"
+			}
+		},
+		"schema": {}
+	}
+}
